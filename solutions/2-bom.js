@@ -1,6 +1,7 @@
 // BEGIN
 export default function solution(url) {
-  window.location.href = url;
-  return `${navigator.appCodeName}/${navigator.appVersion} ${window.location.href}`;
+  const browserAgent = navigator.userAgent;
+  const browserDetails = browserAgent.match(/Mozilla\/\d+\.\d+/)[0];
+  return `${browserDetails} ${url}`;
 }
 // END
